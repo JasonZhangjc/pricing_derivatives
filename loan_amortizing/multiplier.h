@@ -1,5 +1,5 @@
-#ifndef HelloWorld_multiplier_h
-#define HelloWorld_multiplier_h
+#ifndef multiplier_h
+#define multiplier_h
 
 double multiplier(double firstNum, double secondNum) {
     // This function multiplies two numbers

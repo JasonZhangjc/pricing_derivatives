@@ -10,16 +10,14 @@
 
 using namespace std;
 
-enum AmortizeProgram
-{
+enum AmortizeProgram {
     LOAN_PRINCIPAL = 1,
     INTEREST_RATE = 2,
     YEARS_OF_LOAN = 3
 };
 
 // width of the output segments
-enum AmortEnum
-{
+enum AmortEnum {
     YR_OUT = 2,
     MN_OUT = 2,
     CUM_MN_OUT = 5,
@@ -30,8 +28,7 @@ enum AmortEnum
 };
 
 // output segments
-string AmortHeader[] =
-{
+string AmortHeader[] = {
     "Yr",
     "Mn",
     "CumMn",
@@ -41,8 +38,7 @@ string AmortHeader[] =
     "Balance"
 };
 
-void printAmortHeader()
-{
+void printAmortHeader() {
     // setw sets width of the output segments
     cout <<
         endl <<
@@ -57,15 +53,13 @@ void printAmortHeader()
         endl;
 }
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
     double principal = 0.0;
     double humanInterest = 0.0;
     int yearsOfLoan = 0;
     
     // when there is no additional parameters passed in
-    if (argc == 1)
-    {
+    if (argc == 1) {
         cout << "Enter the principal amount: ";
         cin >> principal;
         
@@ -94,6 +88,10 @@ int main(int argc, char* argv[])
     
     double payment = 0.0;
     
+    // the monthly payment of a loan does not change afterwards
+    // the proportion of principal over interest will be increased 
+    // as principal balance is reduced, the interest also decreases
+    // as the interest rate does not change
     // loan payment formula: 
     // mr = monthInterestRate
     // payment = principal * mr / (1 - (1+mr)^-monthsOfLoan)
@@ -120,12 +118,9 @@ int main(int argc, char* argv[])
     
     int yearMonth = 1;
     
-    while(currLoanMonth <= monthsOfLoan){
-        
-        if(switchYear != year){
-            
+    while(currLoanMonth <= monthsOfLoan) {
+        if(switchYear != year) {
             switchYear = year;
-            
             printAmortHeader();
         }
         
@@ -155,8 +150,7 @@ int main(int argc, char* argv[])
         
         yearMonth++;
         
-        if (yearMonth > gMonthsInYear)
-        {
+        if (yearMonth > gMonthsInYear) {
             yearMonth = 1;
             year++;
         }

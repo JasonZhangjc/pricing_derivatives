@@ -1,5 +1,5 @@
-#ifndef HelloWorld_divisor_h
-#define HelloWorld_divisor_h
+#ifndef divisor_h
+#define divisor_h
 
 double divisor(double numerator, double denominator) {
     // This function divides two numbers

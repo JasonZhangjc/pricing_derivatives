@@ -1,11 +1,10 @@
-#ifndef HelloWorld_globals_h
-#define HelloWorld_globals_h
+#ifndef globals_h
+#define globals_h
 
 const int gMonthsInYear = 12;
 const int gPercentDenominator = 100;
 
-struct gAmortizeMonth
-{
+struct gAmortizeMonth {
     int year;
     int yearMonth;
     long loanMonth;
